@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>com.github.gindex.cleaner</id>
+    <name>JavaDoc HTML Cleaner</name>
+    <vendor email="yevgen.pikus@gmail.com" url="https://github.com/gindex">gindex</vendor>
+
+    <description><![CDATA[
+        Cleans JavaDoc by removing HTML tags and replacing escaped chars.
+    ]]></description>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlTagAnnotator"/>
+        <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings" />
+        <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlFoldingBuilder"/>
+        <additionalTextAttributes scheme="Darcula" file="style/default.xml"/>
+        <additionalTextAttributes scheme="Default" file="style/default.xml"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

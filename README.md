@@ -1,0 +1,1 @@
+# intellij-javadoc-html-cleaner

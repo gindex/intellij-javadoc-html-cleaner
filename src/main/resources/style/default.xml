@@ -1,13 +1,78 @@
 <?xml version='1.0'?>
 <list>
-    <option name="ITALIC_FONT">
+    <option name="BOLD_FONT">
+        <value>
+            <option name="FONT_TYPE" value="1"/>
+        </value>
+    </option>
+    <option name="STRONG_FONT">
         <value>
             <option name="FONT_TYPE" value="2"/>
         </value>
     </option>
-    <option name="BOLD_FONT">
+        <option name="EM_FONT">
         <value>
-            <option name="FONT_TYPE" value="1"/>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="H1_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="H2_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="H3_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="H4_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="H5_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="H6_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="PRE_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="LINK_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="CODE_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="ITALIC_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="CITE_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+        <option name="TT_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
         </value>
     </option>
 </list>

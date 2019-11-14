@@ -30,7 +30,6 @@ class CleanerColorSettings : ColorSettingsPage {
         val citeStyleKey = createTextAttributesKey("CITE_FONT", HighlighterColors.TEXT)
         val teletypeStyleKey = createTextAttributesKey("TT_FONT", HighlighterColors.TEXT)
 
-
         private val ATTRS = arrayOf(
                 AttributesDescriptor("<b>", boldStyleKey),
                 AttributesDescriptor("<strong>", strongStyleKey),
@@ -48,7 +47,6 @@ class CleanerColorSettings : ColorSettingsPage {
                 AttributesDescriptor("<h5>", h5StyleKey),
                 AttributesDescriptor("<h6>", h6StyleKey)
         )
-
     }
 
     override fun getHighlighter(): SyntaxHighlighter {

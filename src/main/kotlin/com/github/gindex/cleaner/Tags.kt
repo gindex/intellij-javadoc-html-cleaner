@@ -42,8 +42,8 @@ open class Tag(name: String) {
         val anyTagPattern: Pattern = Pattern.compile("(</?.+?>)+", Pattern.DOTALL)
     }
 
-    //TODO
-    val tagStartAndEndPattern: Pattern = Pattern.compile("<${name}.+?</${name}>"/*, Pattern.DOTALL*/)
+    val tagStartAndEndPattern: Pattern = Pattern.compile("<${name}(\\s.+?)?>.+?</${name}>",
+            Pattern.DOTALL)
 }
 
 class BoldTag(name: String) : Tag(name)

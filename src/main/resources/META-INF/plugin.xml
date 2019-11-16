@@ -14,7 +14,7 @@
         <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlTagAnnotator"/>
         <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings" />
         <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlFoldingBuilder"/>
-        <additionalTextAttributes scheme="Darcula" file="style/default.xml"/>
+        <additionalTextAttributes scheme="Darcula" file="style/default-dracula.xml"/>
         <additionalTextAttributes scheme="Default" file="style/default.xml"/>
     </extensions>
 

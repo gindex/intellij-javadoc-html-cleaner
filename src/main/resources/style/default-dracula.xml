@@ -1,0 +1,93 @@
+<?xml version='1.0'?>
+<list>
+    <option name="LINK_FONT">
+        <value>
+            <option name="FOREGROUND" value="629755" />
+            <option name="FONT_TYPE" value="2" />
+            <option name="EFFECT_COLOR" value="629755" />
+            <option name="EFFECT_TYPE" value="1" />
+        </value>
+    </option>
+    <option name="BOLD_FONT">
+        <value>
+            <option name="FONT_TYPE" value="1" />
+        </value>
+    </option>
+    <option name="CITE_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+            <option name="FONT_TYPE" value="2" />
+        </value>
+    </option>
+    <option name="CODE_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+        </value>
+    </option>
+    <option name="EM_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+            <option name="FONT_TYPE" value="2" />
+        </value>
+    </option>
+    <option name="H1_FONT">
+        <value>
+            <option name="FOREGROUND" value="e8bf6a" />
+            <option name="FONT_TYPE" value="1" />
+            <option name="EFFECT_COLOR" value="e8bf6a" />
+            <option name="EFFECT_TYPE" value="4" />
+        </value>
+    </option>
+    <option name="H2_FONT">
+        <value>
+            <option name="FOREGROUND" value="e8bf6a" />
+            <option name="EFFECT_COLOR" value="e8bf6a" />
+            <option name="EFFECT_TYPE" value="1" />
+        </value>
+    </option>
+    <option name="H3_FONT">
+        <value>
+            <option name="FOREGROUND" value="e8bf6a" />
+            <option name="EFFECT_COLOR" value="e8bf6a" />
+            <option name="EFFECT_TYPE" value="5" />
+        </value>
+    </option>
+    <option name="H4_FONT">
+        <value>
+            <option name="FOREGROUND" value="e8bf6a" />
+            <option name="EFFECT_COLOR" value="e8bf6a" />
+            <option name="EFFECT_TYPE" value="2" />
+        </value>
+    </option>
+    <option name="H5_FONT">
+        <value>
+            <option name="FOREGROUND" value="e8bf6a" />
+        </value>
+    </option>
+    <option name="H6_FONT">
+        <value>
+            <option name="FOREGROUND" value="e8bf6a" />
+        </value>
+    </option>
+    <option name="ITALIC_FONT">
+        <value>
+            <option name="FONT_TYPE" value="2"/>
+        </value>
+    </option>
+    <option name="PRE_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+        </value>
+    </option>
+    <option name="STRONG_FONT">
+        <value>
+            <option name="FONT_TYPE" value="1" />
+        </value>
+    </option>
+    <option name="TT_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+        </value>
+    </option>
+</list>
+

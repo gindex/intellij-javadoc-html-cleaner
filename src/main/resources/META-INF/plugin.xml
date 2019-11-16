@@ -11,7 +11,6 @@
     <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
         <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlTagAnnotator"/>
         <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings" />
         <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlFoldingBuilder"/>
@@ -19,7 +18,5 @@
         <additionalTextAttributes scheme="Default" file="style/default.xml"/>
     </extensions>
 
-    <actions>
-        <!-- Add your actions here -->
-    </actions>
+    <actions/>
 </idea-plugin>

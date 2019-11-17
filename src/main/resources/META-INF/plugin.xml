@@ -1,10 +1,31 @@
 <idea-plugin>
-    <id>com.github.gindex.cleaner</id>
+    <id>com.github.gindex</id>
     <name>JavaDoc HTML Cleaner</name>
     <vendor email="yevgen.pikus@gmail.com" url="https://github.com/gindex">gindex</vendor>
 
     <description><![CDATA[
-        Cleans JavaDoc by removing HTML tags and replacing escaped chars.
+
+          Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
+          <br />
+          <br />
+          <p>Basic features:
+
+          <ul>
+               <li>Folds HTML tags (collapse &#47; expand <code>&#8984;&#45;&#47;&#8984;&#43;</code> on macOS)</li>
+               <li>Highlights contained text</li>
+               <li>Provides highlighting configuration</li>
+               <li>Replaces reserved chars</li>
+          </ul>
+
+          For configuration navigate to <code>Preferences -> Editor -> Color Schema -> JavaDoc HTML Cleaner</code>.
+          <p>Includes default configuration for the default and dracula theme.
+          <br />
+          <br />
+          Usage (tags are collapsed by default):
+          <br />
+          <p><img src="https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif"
+               border="0" width="750" height="550"/></p>
+
     ]]></description>
 
     <depends>com.intellij.modules.lang</depends>
@@ -14,9 +35,11 @@
         <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlTagAnnotator"/>
         <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings" />
         <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlFoldingBuilder"/>
-        <additionalTextAttributes scheme="Darcula" file="style/default-dracula.xml"/>
-        <additionalTextAttributes scheme="Default" file="style/default.xml"/>
+        <additionalTextAttributes scheme="Darcula" file="colors/default-dracula.xml"/>
+        <additionalTextAttributes scheme="Default" file="colors/default.xml"/>
     </extensions>
+
+
 
     <actions/>
 </idea-plugin>

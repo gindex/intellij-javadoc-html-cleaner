@@ -15,7 +15,7 @@ plugins {
 }
 
 group = "com.github.gindex"
-version = "0.0.1"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -62,4 +62,4 @@ idea {
     }
 }
 
-defaultTasks("clean", "build")
+defaultTasks("clean", "buildPlugin")

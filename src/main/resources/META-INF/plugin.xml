@@ -4,30 +4,41 @@
     <vendor email="yevgen.pikus@gmail.com" url="https://github.com/gindex">gindex</vendor>
 
     <description><![CDATA[
+        Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
+        <br />
+        <br />
+        <p>Basic features:
 
-          Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
-          <br />
-          <br />
-          <p>Basic features:
-
-          <ul>
-               <li>Folds HTML tags (collapse &#47; expand <code>&#8984;&#45;&#47;&#8984;&#43;</code> on macOS)</li>
-               <li>Highlights contained text</li>
-               <li>Provides highlighting configuration</li>
-               <li>Replaces reserved chars</li>
-          </ul>
-          <br />
-          For configuration navigate to <code>Preferences -> Editor -> Color Schema -> JavaDoc HTML Cleaner</code>.
-          <p>Includes default configuration for the default and dracula theme.
-          <br />
-          <br />
-          Usage (tags are collapsed by default):
-          <br />
-          <br />
-          <p><img src="https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif"
-               border="0" width="750" height="550"/></p>
-
+        <ul>
+           <li>Folds HTML tags (collapse &#47; expand <code>&#8984;&#45;&#47;&#8984;&#43;</code> on macOS)</li>
+           <li>Highlights contained text</li>
+           <li>Provides highlighting configuration</li>
+           <li>Replaces reserved chars</li>
+        </ul>
+        <br />
+        For configuration navigate to <code>Preferences -> Editor -> Color Schema -> JavaDoc HTML Cleaner</code>.
+        <p>Includes default configuration for the default and dracula theme.
+        <br />
+        <br />
+        Usage (tags are collapsed by default):
+        <br />
+        <br />
+        <p><img src="https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif"
+           border="0" width="750" height="550"/></p>
     ]]></description>
+
+    <change-notes><![CDATA[
+        <p>1.0.1</p>
+        <ul>
+            <li>Fix highlighting of multiline tags with empty lines in between.</li>
+            <li>Add support for additional chars.</li>
+            <li>Improve formatting of the plugin description.</li>
+        </ul>
+        <p>1.0</p>
+        <ul>
+            <li>Initial Release</li>
+        </ul>
+    ]]></change-notes>
 
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.java</depends>

@@ -16,12 +16,13 @@
                <li>Provides highlighting configuration</li>
                <li>Replaces reserved chars</li>
           </ul>
-
+          <br />
           For configuration navigate to <code>Preferences -> Editor -> Color Schema -> JavaDoc HTML Cleaner</code>.
           <p>Includes default configuration for the default and dracula theme.
           <br />
           <br />
           Usage (tags are collapsed by default):
+          <br />
           <br />
           <p><img src="https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif"
                border="0" width="750" height="550"/></p>

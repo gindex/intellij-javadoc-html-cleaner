@@ -136,7 +136,9 @@ object CharacterEntityMapping {
             "&#125;" to "}",
             "&#126;" to "~",
             "&times;" to "×",
-            "&#215;" to "×"
+            "&#215;" to "×",
+            "&#064;" to "@",
+            "&commat;" to "@"
     )
 
     val entityPattern: Pattern = Pattern.compile("&.+?;")

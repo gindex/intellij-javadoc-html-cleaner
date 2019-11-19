@@ -10,7 +10,7 @@ import java.util.regex.Pattern
 
 class HtmlTagAnnotator : Annotator {
     companion object {
-        private val leadingAsterisksPattern = Pattern.compile("(\\R\\s+\\*\\s+)")
+        private val leadingAsterisksPattern = Pattern.compile("(\\R\\s+\\*)")
     }
 
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {

@@ -1,6 +1,9 @@
 Intellij Plugin ― JavaDoc HTML Cleaner
 ====================================== 
 
+[![](https://img.shields.io/jetbrains/plugin/v/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
+[![](https://img.shields.io/jetbrains/plugin/d/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
+
 Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
 Basic features:
 - Folds HTML tags (collapse / expand `⌘-/⌘+` on macOS)

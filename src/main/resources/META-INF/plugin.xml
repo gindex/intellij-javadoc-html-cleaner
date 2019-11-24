@@ -28,6 +28,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+        <p>1.0.2</p>
+        <ul>
+            <li>Small fixes and improvements</li>
+        </ul>
         <p>1.0.1</p>
         <ul>
             <li>Fix highlighting of multiline tags with empty lines in between.</li>
@@ -45,12 +49,11 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlTagAnnotator"/>
-        <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings" />
+        <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings"/>
         <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlFoldingBuilder"/>
         <additionalTextAttributes scheme="Darcula" file="colors/default-dracula.xml"/>
         <additionalTextAttributes scheme="Default" file="colors/default.xml"/>
     </extensions>
-
 
 
     <actions/>

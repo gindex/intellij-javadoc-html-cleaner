@@ -11,13 +11,16 @@ import com.intellij.psi.javadoc.PsiDocComment
 import com.intellij.psi.util.PsiTreeUtil
 
 class HtmlFoldingBuilder : FoldingBuilderEx() {
+    companion object {
+        private val group: FoldingGroup = FoldingGroup.newGroup("html")
+    }
+
     override fun isCollapsedByDefault(node: ASTNode): Boolean {
         return true
     }
 
     override fun buildFoldRegions(root: PsiElement, document: Document, quick: Boolean): Array<FoldingDescriptor> {
-        val group = FoldingGroup.newGroup("html")
-        val javadocs: List<PsiDocComment> = PsiTreeUtil.findChildrenOfType(root, PsiDocComment::class.java).toList()
+        val javadocs: Collection<PsiDocComment> = PsiTreeUtil.findChildrenOfType(root, PsiDocComment::class.java)
 
         return javadocs.flatMap { javadoc ->
             val tagFoldingDesc: List<FoldingDescriptor> = getTagFoldingDecs(javadoc, group)

@@ -4,8 +4,8 @@ import java.util.regex.Pattern
 
 object CharacterEntityMapping {
     private val mappings = mapOf(
-            "&nbsp;" to "",
-            "&#160;" to "",
+            "&nbsp;" to " ",
+            "&#160;" to " ",
             "&lt;" to "<",
             "&#60;" to "<",
             "&gt;" to ">",

@@ -1,9 +1,10 @@
 Intellij Plugin ― JavaDoc HTML Cleaner
 ====================================== 
 
-[![](https://img.shields.io/jetbrains/plugin/v/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
-[![](https://img.shields.io/jetbrains/plugin/d/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
-[![](https://github.com/gindex/intellij-javadoc-html-cleaner/workflows/Gradle%20CI/badge.svg)](https://github.com/gindex/intellij-javadoc-html-cleaner/actions)
+[![GitHub Release](https://img.shields.io/github/release/gindex/intellij-javadoc-html-cleaner.svg)](https://github.com/gindex/intellij-javadoc-html-cleaner/releases) 
+[![JetBrains Marketplace](https://img.shields.io/jetbrains/plugin/v/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
+[![JetBrains Marketplace Download](https://img.shields.io/jetbrains/plugin/d/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
+[![Github Gradle C](https://github.com/gindex/intellij-javadoc-html-cleaner/workflows/Gradle%20CI/badge.svg)](https://github.com/gindex/intellij-javadoc-html-cleaner/actions)
 
 Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
 Basic features:
@@ -19,14 +20,14 @@ Usage
 -----
 Tags are collapsed by default. 
 
-![](https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif)
+![Folding Example](https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif)
 
 Build plugin
 ------------
 
 Requires:
 - JDK 1.8
-- Gradle 6.0
+- Gradle 6
 
 Build the plugin:
 

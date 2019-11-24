@@ -149,3 +149,5 @@ gradle-app.setting
 .sandbox
 
 # End of https://www.gitignore.io/api/gradle,java,kotlin,intellij+all
+
+.DS_Store

@@ -3,6 +3,7 @@ Intellij Plugin ― JavaDoc HTML Cleaner
 
 [![](https://img.shields.io/jetbrains/plugin/v/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
 [![](https://img.shields.io/jetbrains/plugin/d/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
+[![](https://github.com/gindex/intellij-javadoc-html-cleaner/workflows/Gradle%20CI/badge.svg)](https://github.com/gindex/intellij-javadoc-html-cleaner/workflows/Gradle%20CI/badge.svg)
 
 Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
 Basic features:

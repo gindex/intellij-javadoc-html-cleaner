@@ -31,7 +31,7 @@ class HtmlFoldingBuilder : FoldingBuilderEx() {
     }
 
     private fun getTagFoldingDecs(javadoc: PsiDocComment, group: FoldingGroup): List<FoldingDescriptor> {
-        return Tag.anyTagPattern
+        return HtmlTag.anyTagPattern
             .extractMatchingRanges(javadoc.text)
             .map { (text, start, end) ->
                 val placeholderText = when {

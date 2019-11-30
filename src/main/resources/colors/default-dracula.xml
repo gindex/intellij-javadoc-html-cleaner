@@ -8,6 +8,22 @@
             <option name="EFFECT_TYPE" value="1" />
         </value>
     </option>
+    <option name="JLINK_FONT">
+        <value>
+            <option name="FOREGROUND" value="629755" />
+            <option name="FONT_TYPE" value="2" />
+            <option name="EFFECT_COLOR" value="629755" />
+            <option name="EFFECT_TYPE" value="1" />
+        </value>
+    </option>
+    <option name="JLINKPLAIN_FONT">
+        <value>
+            <option name="FOREGROUND" value="629755" />
+            <option name="FONT_TYPE" value="2" />
+            <option name="EFFECT_COLOR" value="629755" />
+            <option name="EFFECT_TYPE" value="1" />
+        </value>
+    </option>
     <option name="BOLD_FONT">
         <value>
             <option name="FONT_TYPE" value="1" />
@@ -20,6 +36,16 @@
         </value>
     </option>
     <option name="CODE_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+        </value>
+    </option>
+    <option name="JCODE_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+        </value>
+    </option>
+    <option name="JVALUE_FONT">
         <value>
             <option name="FOREGROUND" value="a9b7c6" />
         </value>
@@ -75,6 +101,11 @@
         </value>
     </option>
     <option name="PRE_FONT">
+        <value>
+            <option name="FOREGROUND" value="a9b7c6" />
+        </value>
+    </option>
+    <option name="JLITERAL_FONT">
         <value>
             <option name="FOREGROUND" value="a9b7c6" />
         </value>

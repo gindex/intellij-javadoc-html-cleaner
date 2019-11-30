@@ -29,6 +29,11 @@ class CleanerColorSettings : ColorSettingsPage {
         val italicStyleKey = createTextAttributesKey("ITALIC_FONT", HighlighterColors.TEXT)
         val citeStyleKey = createTextAttributesKey("CITE_FONT", HighlighterColors.TEXT)
         val teletypeStyleKey = createTextAttributesKey("TT_FONT", HighlighterColors.TEXT)
+        val jCodeStyleKey = createTextAttributesKey("JCODE_FONT", HighlighterColors.TEXT)
+        val jLinkStyleKey = createTextAttributesKey("JLINK_FONT", HighlighterColors.TEXT)
+        val jValueStyleKey = createTextAttributesKey("JVALUE_FONT", HighlighterColors.TEXT)
+        val jLinkplainStyleKey = createTextAttributesKey("JLINKPLAIN_FONT", HighlighterColors.TEXT)
+        val jLiteralStyleKey = createTextAttributesKey("JLITERAL_FONT", HighlighterColors.TEXT)
 
         private val ATTRS = arrayOf(
                 AttributesDescriptor("<b>", boldStyleKey),
@@ -45,7 +50,12 @@ class CleanerColorSettings : ColorSettingsPage {
                 AttributesDescriptor("<h3>", h3StyleKey),
                 AttributesDescriptor("<h4>", h4StyleKey),
                 AttributesDescriptor("<h5>", h5StyleKey),
-                AttributesDescriptor("<h6>", h6StyleKey)
+                AttributesDescriptor("<h6>", h6StyleKey),
+                AttributesDescriptor("{@code }", jCodeStyleKey),
+                AttributesDescriptor("{@value }", jValueStyleKey),
+                AttributesDescriptor("{@link }", jLinkStyleKey),
+                AttributesDescriptor("{@linkplain }", jLinkplainStyleKey),
+                AttributesDescriptor("{@literal }", jLiteralStyleKey)
         )
     }
 
@@ -69,7 +79,12 @@ class CleanerColorSettings : ColorSettingsPage {
                 "code" to codeStyleKey,
                 "i" to italicStyleKey,
                 "cite" to citeStyleKey,
-                "teletype" to teletypeStyleKey
+                "teletype" to teletypeStyleKey,
+                "_code" to jCodeStyleKey,
+                "_value" to jValueStyleKey,
+                "_link" to jLinkStyleKey,
+                "_linkplain" to jLinkplainStyleKey,
+                "_literal" to jLiteralStyleKey
         ).toMutableMap()
     }
 
@@ -109,6 +124,11 @@ class CleanerColorSettings : ColorSettingsPage {
         | * Test for italic: <i>italic</i>
         | * Test for cite: <cite>cite</cite>
         | * Test for teletype: <teletype>teletype</teletype>
+        | * Test for @code: <_code>{@code code}</_code>
+        | * Test for @value: <_value>{@value value}</_value>
+        | * Test for @link: <_link>{@link link}</_link>
+        | * Test for @linkplain: <_linkplain>{@linkplain linkplain}</_linkplain>
+        | * Test for @literal: <_literal>{@literal literal}</_literal>
         | */ 
         """.trimMargin()
     }

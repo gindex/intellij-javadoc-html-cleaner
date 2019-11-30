@@ -11,6 +11,11 @@ import com.github.gindex.cleaner.CleanerColorSettings.Companion.h4StyleKey
 import com.github.gindex.cleaner.CleanerColorSettings.Companion.h5StyleKey
 import com.github.gindex.cleaner.CleanerColorSettings.Companion.h6StyleKey
 import com.github.gindex.cleaner.CleanerColorSettings.Companion.italicStyleKey
+import com.github.gindex.cleaner.CleanerColorSettings.Companion.jCodeStyleKey
+import com.github.gindex.cleaner.CleanerColorSettings.Companion.jLinkStyleKey
+import com.github.gindex.cleaner.CleanerColorSettings.Companion.jLinkplainStyleKey
+import com.github.gindex.cleaner.CleanerColorSettings.Companion.jLiteralStyleKey
+import com.github.gindex.cleaner.CleanerColorSettings.Companion.jValueStyleKey
 import com.github.gindex.cleaner.CleanerColorSettings.Companion.linkStyleKey
 import com.github.gindex.cleaner.CleanerColorSettings.Companion.preStyleKey
 import com.github.gindex.cleaner.CleanerColorSettings.Companion.strongStyleKey
@@ -19,7 +24,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-open class Tag(name: String) {
+abstract class Tag() {
     companion object {
         private val BOLD = BoldTag("b")
         private val STRONG = StrongTag("strong")
@@ -36,30 +41,54 @@ open class Tag(name: String) {
         private val ITALIC = ItalicTag("i")
         private val CITE = CiteTag("cite")
         private val TELETYPE = TeletypeTag("tt")
+        private val JCODE = JCodeTag("code")
+        private val JLINK = JLinkTag("link")
+        private val JVALUE = JValueTag("value")
+        private val JLINKPLAING = JLinkplaingTag("linkplain")
+        private val JLITERAL = JLiteral("literal")
 
-        val tags = listOf(BOLD, STRONG, EM, PRE, H1, H2, H3, H4, H5, H6, LINK, CODE, ITALIC, CITE, TELETYPE)
 
-        val anyTagPattern: Pattern = Pattern.compile("(</?.+?>)+", Pattern.DOTALL)
+        val tags = listOf(BOLD, STRONG, EM, PRE, H1, H2, H3, H4, H5, H6, LINK, CODE, ITALIC, CITE, TELETYPE,
+                JCODE, JLINK, JVALUE, JLINKPLAING, JLITERAL)
     }
 
-    val tagStartAndEndPattern: Pattern = Pattern.compile("<${name}(\\s.+?)?>.+?</${name}>", Pattern.DOTALL)
+    abstract val tagStartAndEndPattern: Pattern
 }
 
-class BoldTag(name: String) : Tag(name)
-class StrongTag(name: String) : Tag(name)
-class EmTag(name: String) : Tag(name)
-class H1Tag(name: String) : Tag(name)
-class H2Tag(name: String) : Tag(name)
-class H3Tag(name: String) : Tag(name)
-class H4Tag(name: String) : Tag(name)
-class H5Tag(name: String) : Tag(name)
-class H16Tag(name: String) : Tag(name)
-class PreTag(name: String) : Tag(name)
-class LinkTag(name: String) : Tag(name)
-class CodeTag(name: String) : Tag(name)
-class ItalicTag(name: String) : Tag(name)
-class CiteTag(name: String) : Tag(name)
-class TeletypeTag(name: String) : Tag(name)
+open class HtmlTag(name: String): Tag() {
+    companion object {
+        val anyTagPattern: Pattern = Pattern.compile("(</?.+?>)+", Pattern.DOTALL)
+    }
+    override val tagStartAndEndPattern: Pattern = Pattern.compile("<${name}(\\s.+?)?>.+?</${name}>", Pattern.DOTALL)
+}
+
+open class JavadocTag(name: String): Tag() {
+
+    override val tagStartAndEndPattern: Pattern = Pattern.compile("\\{@${name}.+?}", Pattern.DOTALL)
+}
+
+class BoldTag(name: String) : HtmlTag(name)
+class StrongTag(name: String) : HtmlTag(name)
+class EmTag(name: String) : HtmlTag(name)
+class H1Tag(name: String) : HtmlTag(name)
+class H2Tag(name: String) : HtmlTag(name)
+class H3Tag(name: String) : HtmlTag(name)
+class H4Tag(name: String) : HtmlTag(name)
+class H5Tag(name: String) : HtmlTag(name)
+class H16Tag(name: String) : HtmlTag(name)
+class PreTag(name: String) : HtmlTag(name)
+class LinkTag(name: String) : HtmlTag(name)
+class CodeTag(name: String) : HtmlTag(name)
+class ItalicTag(name: String) : HtmlTag(name)
+class CiteTag(name: String) : HtmlTag(name)
+class TeletypeTag(name: String) : HtmlTag(name)
+
+class JCodeTag(name: String) : JavadocTag(name)
+class JLinkTag(name: String) : JavadocTag(name)
+class JValueTag(name: String) : JavadocTag(name)
+class JLinkplaingTag(name: String) : JavadocTag(name)
+class JLiteral(name: String) : JavadocTag(name)
+
 
 object TagStyle {
     fun mapTagToStyle(tag: Tag): TextAttributesKey? {
@@ -79,6 +108,11 @@ object TagStyle {
             is ItalicTag -> italicStyleKey
             is CiteTag -> citeStyleKey
             is TeletypeTag -> teletypeStyleKey
+            is JCodeTag -> jCodeStyleKey
+            is JLinkTag -> jLinkStyleKey
+            is JValueTag -> jValueStyleKey
+            is JLinkplaingTag -> jLinkplainStyleKey
+            is JLiteral -> jLiteralStyleKey
             else -> null
         }
     }

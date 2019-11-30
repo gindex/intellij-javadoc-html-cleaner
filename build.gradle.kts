@@ -26,14 +26,14 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+val ideaVersion: String by project
+val downloadIdeaSources: String by project
 
 intellij {
-    version = "2019.2"
+    version = ideaVersion
     pluginName = "JavaDoc HTML Cleaner"
     setPlugins("java")
-
-    downloadSources = true
-
+    downloadSources = downloadIdeaSources.toBoolean()
     sandboxDirectory = project.rootDir.canonicalPath + "/.sandbox"
 }
 

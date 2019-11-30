@@ -16,6 +16,11 @@
  * Test for italic: <info textAttributesKey="ITALIC_FONT"><i>italic</i></info>
  * Test for cite: <info textAttributesKey="CITE_FONT"><cite>cite</cite></info>
  * Test for teletype: <info textAttributesKey="TT_FONT"><tt>teletype</tt></info>
+ * Test for @code: <info textAttributesKey="JCODE_FONT">{@code code}</info>
+ * Test for @value: <info textAttributesKey="JVALUE_FONT">{@value value}</info>
+ * Test for @link: <info textAttributesKey="JLINK_FONT">{@link link}</info>
+ * Test for @linkplain: <info textAttributesKey="JLINKPLAIN_FONT">{@linkplain linkplain}</info>
+ * Test for @literal: <info textAttributesKey="JLITERAL_FONT">{@literal literal}</info>
  */
 public class OnelineTagHighlighting {
 

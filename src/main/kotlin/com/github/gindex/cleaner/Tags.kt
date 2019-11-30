@@ -64,7 +64,7 @@ open class HtmlTag(name: String): Tag() {
 
 open class JavadocTag(name: String): Tag() {
 
-    override val tagStartAndEndPattern: Pattern = Pattern.compile("\\{@${name}.+?}", Pattern.DOTALL)
+    override val tagStartAndEndPattern: Pattern = Pattern.compile("\\{@${name}(\\s).+?}", Pattern.DOTALL)
 }
 
 class BoldTag(name: String) : HtmlTag(name)

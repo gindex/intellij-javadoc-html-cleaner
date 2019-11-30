@@ -46,11 +46,8 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs.plus("-progressive")
     }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
 
 idea {
@@ -59,6 +56,7 @@ idea {
         isDownloadSources = true
 
         excludeDirs.add(file(intellij.sandboxDirectory))
+        excludeDirs.add(file("testData"))
     }
 }
 

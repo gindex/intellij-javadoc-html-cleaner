@@ -8,7 +8,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.javadoc.PsiDocComment
 import java.util.regex.Pattern
 
-class HtmlTagAnnotator : Annotator {
+class TagAnnotator : Annotator {
     companion object {
         private val leadingAsterisksPattern = Pattern.compile("(\\R\\s+\\*)")
     }

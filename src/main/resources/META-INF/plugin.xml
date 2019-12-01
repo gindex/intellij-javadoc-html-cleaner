@@ -48,9 +48,9 @@
     <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlTagAnnotator"/>
+        <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.TagAnnotator"/>
         <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings"/>
-        <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.HtmlFoldingBuilder"/>
+        <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.TagFoldingBuilder"/>
         <additionalTextAttributes scheme="Darcula" file="colors/default-dracula.xml"/>
         <additionalTextAttributes scheme="Default" file="colors/default.xml"/>
     </extensions>

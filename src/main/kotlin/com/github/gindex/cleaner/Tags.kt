@@ -24,7 +24,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-abstract class Tag() {
+abstract class Tag {
     companion object {
         private val BOLD = BoldTag("b")
         private val STRONG = StrongTag("strong")
@@ -47,7 +47,6 @@ abstract class Tag() {
         private val JLINKPLAING = JLinkplaingTag("linkplain")
         private val JLITERAL = JLiteral("literal")
 
-
         val tags = listOf(BOLD, STRONG, EM, PRE, H1, H2, H3, H4, H5, H6, LINK, CODE, ITALIC, CITE, TELETYPE,
                 JCODE, JLINK, JVALUE, JLINKPLAING, JLITERAL)
     }
@@ -63,7 +62,9 @@ open class HtmlTag(name: String): Tag() {
 }
 
 open class JavadocTag(name: String): Tag() {
-
+    companion object {
+        val anyTagPattern: Pattern = Pattern.compile("(\\s?\\{@\\w+)(.+?)(})", Pattern.DOTALL)
+    }
     override val tagStartAndEndPattern: Pattern = Pattern.compile("\\{@${name}(\\s).+?}", Pattern.DOTALL)
 }
 
@@ -82,7 +83,6 @@ class CodeTag(name: String) : HtmlTag(name)
 class ItalicTag(name: String) : HtmlTag(name)
 class CiteTag(name: String) : HtmlTag(name)
 class TeletypeTag(name: String) : HtmlTag(name)
-
 class JCodeTag(name: String) : JavadocTag(name)
 class JLinkTag(name: String) : JavadocTag(name)
 class JValueTag(name: String) : JavadocTag(name)
@@ -120,11 +120,11 @@ object TagStyle {
 
 data class TextAndRange(val text: String, val start: Int, val end: Int)
 
-fun Pattern.extractMatchingRanges(str: String): List<TextAndRange> {
+fun Pattern.extractMatchingRanges(str: String, groupIds: List<Int> = listOf(0)): List<TextAndRange> {
     tailrec fun collect(matcher: Matcher, rangeCollector: List<TextAndRange>): List<TextAndRange> {
         return if (matcher.find()) {
             val range = matcher.run {
-                TextAndRange(group(), start(), end())
+                groupIds.map { groupId -> TextAndRange(group(groupId), start(groupId), end(groupId)) }
             }
             collect(matcher, rangeCollector.plus(range))
         } else {

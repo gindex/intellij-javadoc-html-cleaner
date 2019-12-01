@@ -16,6 +16,11 @@
  * Test for italic: <fold text=''><i></fold>italic<fold text=''></i></fold>
  * Test for cite: <fold text=''><cite></fold>cite<fold text=''></cite></fold>
  * Test for teletype: <fold text=''><tt></fold>teletype<fold text=''></tt></fold>
+ * Test for @code:<fold text=''> {@code</fold> code<fold text=''>}</fold>
+ * Test for @value: <fold text=''> {@value</fold> value<fold text=''>}</fold>
+ * Test for @link:<fold text=''>{@link</fold> link<fold text=''>}</fold>
+ * Test for @linkplain:<fold text=''>{@linkplain</fold> linkplain<fold text=''>}</fold>
+ * Test for @literal:<fold text=''>{@literal</fold> literal<fold text=''>}</fold>
  */</fold>
 public class OnelineTagsFolding {
 
@@ -37,6 +42,11 @@ public class OnelineTagsFolding {
      * Test for italic: <fold text=''><i></fold>italic<fold text=''></i></fold>
      * Test for cite: <fold text=''><cite></fold>cite<fold text=''></cite></fold>
      * Test for teletype: <fold text=''><tt></fold>teletype<fold text=''></tt></fold>
+     * Test for @code:<fold text=''> {@code</fold> code<fold text=''>}</fold>
+     * Test for @value: <fold text=''> {@value</fold> value<fold text=''>}</fold>
+     * Test for @link:<fold text=''>{@link</fold> link<fold text=''>}</fold>
+     * Test for @linkplain:<fold text=''>{@linkplain</fold> linkplain<fold text=''>}</fold>
+     * Test for @literal:<fold text=''>{@literal</fold> literal<fold text=''>}</fold>
      */</fold>
     public static void main(String[] args) <fold text='{}'>{ }</fold>
 }

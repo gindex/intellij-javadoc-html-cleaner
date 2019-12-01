@@ -98,6 +98,26 @@
  *
  * <fold text=''></tt></fold>
         *
+ * Test for @code:<fold text=''> {@code</fold>
+ *      code
+ *
+ * <fold text=''>}</fold>
+ * Test for @value: <fold text=''> {@value</fold>
+ * value            <fold text=''>}</fold>
+ *
+ * Test for @link:<fold text=''>{@link</fold>
+ * link
+    *<fold text=''>}</fold>
+ *
+ * Test for @linkplain:<fold text=''>{@linkplain</fold>
+ *
+ * linkplain
+ * <fold text=''>}</fold>
+ *
+ * Test for @literal:<fold text=''>{@literal</fold>
+ *literal
+ *<fold text=''>}</fold>
+ *
  */</fold>
 public class MultilineTagsFolding {
 

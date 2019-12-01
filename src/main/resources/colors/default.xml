@@ -2,31 +2,25 @@
 <list>
     <option name="LINK_FONT">
         <value>
-            <option name="FOREGROUND" value="808080" />
+            <option name="FOREGROUND" value="000000" />
             <option name="FONT_TYPE" value="2" />
-            <option name="EFFECT_COLOR" value="808080" />
-            <option name="EFFECT_TYPE" value="1" />
         </value>
     </option>
     <option name="JLINKPLAIN_FONT">
         <value>
-            <option name="FOREGROUND" value="808080" />
+            <option name="FOREGROUND" value="000000" />
             <option name="FONT_TYPE" value="2" />
-            <option name="EFFECT_COLOR" value="808080" />
-            <option name="EFFECT_TYPE" value="1" />
         </value>
     </option>
     <option name="JLINK_FONT">
         <value>
-            <option name="FOREGROUND" value="808080" />
+            <option name="FOREGROUND" value="000000" />
             <option name="FONT_TYPE" value="2" />
-            <option name="EFFECT_COLOR" value="808080" />
-            <option name="EFFECT_TYPE" value="1" />
         </value>
     </option>
     <option name="BOLD_FONT">
         <value>
-            <option name="FONT_TYPE" value="1" />
+            <option name="FONT_TYPE" value="3" />
         </value>
     </option>
     <option name="CITE_FONT">
@@ -112,7 +106,7 @@
     </option>
     <option name="STRONG_FONT">
         <value>
-            <option name="FONT_TYPE" value="1" />
+            <option name="FONT_TYPE" value="3" />
         </value>
     </option>
     <option name="TT_FONT">

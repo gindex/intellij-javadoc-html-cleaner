@@ -8,9 +8,8 @@
         <br />
         <br />
         <p>Basic features:
-
         <ul>
-           <li>Folds HTML tags (collapse &#47; expand <code>&#8984;&#45;&#47;&#8984;&#43;</code> on macOS)</li>
+           <li>Folds HTML and javadoc tags (collapse &#47; expand <code>&#8984;&#45;&#47;&#8984;&#43;</code> on macOS)</li>
            <li>Highlights contained text</li>
            <li>Provides highlighting configuration</li>
            <li>Replaces reserved chars</li>
@@ -28,6 +27,12 @@
     ]]></description>
 
     <change-notes><![CDATA[
+        <p>1.1.0</p>
+        <ul>
+            <li>Support of Javadoc tags, e.g {@code}</li>
+            <li>New default styles</li>
+            <li>Support Intellij 2019.3</li>
+        </ul>
         <p>1.0.2</p>
         <ul>
             <li>Small fixes and improvements</li>

@@ -8,7 +8,7 @@ Intellij Plugin ― JavaDoc HTML Cleaner
 
 Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
 Basic features:
-- Folds HTML tags (collapse / expand `⌘-/⌘+` on macOS)
+- Folds HTML and Javadoc tags (collapse / expand `⌘-/⌘+` on macOS)
 - Highlights contained text
 - Provides highlighting configuration
 - Replaces reserved chars

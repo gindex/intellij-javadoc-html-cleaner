@@ -31,6 +31,16 @@
  *<info textAttributesKey="CITE_FONT">cite</cite></info>
  * Test for teletype: <info textAttributesKey="TT_FONT"><tt></info>
  *<info textAttributesKey="TT_FONT">teletype</tt></info>
+ * Test for @code: <info textAttributesKey="JCODE_FONT">{@code</info>
+ *<info textAttributesKey="JCODE_FONT">code}</info>
+ * Test for @value: <info textAttributesKey="JVALUE_FONT">{@value</info>
+ *<info textAttributesKey="JVALUE_FONT">value}</info>
+ * Test for @link: <info textAttributesKey="JLINK_FONT">{@link</info>
+ *<info textAttributesKey="JLINK_FONT">link}</info>
+ * Test for @linkplain: <info textAttributesKey="JLINKPLAIN_FONT">{@linkplain</info>
+ *<info textAttributesKey="JLINKPLAIN_FONT">linkplain}</info>
+ * Test for @literal: <info textAttributesKey="JLITERAL_FONT">{@literal</info>
+ *<info textAttributesKey="JLITERAL_FONT">literal}</info>
  */
 public class NewlineTagHighlighting {
 

@@ -16,7 +16,7 @@
         </ul>
         <br />
         For configuration navigate to <code>Preferences -> Editor -> Color Schema -> JavaDoc HTML Cleaner</code>.
-        <p>Includes default configuration for the default and dracula theme.
+        <p>Includes default configuration for the light and darcula theme.
         <br />
         <br />
         Usage (tags are collapsed by default):
@@ -56,8 +56,8 @@
         <annotator language="JAVA" implementationClass="com.github.gindex.cleaner.TagAnnotator"/>
         <colorSettingsPage implementation="com.github.gindex.cleaner.CleanerColorSettings"/>
         <lang.foldingBuilder language="JAVA" implementationClass="com.github.gindex.cleaner.TagFoldingBuilder"/>
-        <additionalTextAttributes scheme="Darcula" file="colors/default-dracula.xml"/>
-        <additionalTextAttributes scheme="Default" file="colors/default.xml"/>
+        <additionalTextAttributes scheme="Darcula" file="colors/darcula.xml"/>
+        <additionalTextAttributes scheme="Default" file="colors/light.xml"/>
     </extensions>
 
 

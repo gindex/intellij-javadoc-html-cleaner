@@ -14,7 +14,7 @@ Basic features:
 - Replaces reserved chars
 
 For configuration navigate to `Preferences -> Editor -> Color Schema -> JavaDoc HTML Cleaner`. 
-Includes default configuration for the default and dracula theme. 
+Includes default configuration for the light and darcula theme. 
 
 Usage
 -----

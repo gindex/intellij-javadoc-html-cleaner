@@ -4,7 +4,11 @@
     <vendor email="yevgen.pikus@gmail.com" url="https://github.com/gindex">gindex</vendor>
 
     <description><![CDATA[
-        Improves JavDoc readability by hiding HTML markup and replacing reserved chars.
+        Improves JavDoc readability by hiding HTML markup and replacing reserved chars (tags are collapsed by default).
+        <br />
+        <br />
+        <p><img src="https://user-images.githubusercontent.com/4037842/70388764-5b9d5000-19b6-11ea-9b3f-cc53ad60e3cc.gif"
+           border="0" width="624" height="274"/></p>
         <br />
         <br />
         <p>Basic features:
@@ -16,17 +20,16 @@
         </ul>
         <br />
         For configuration navigate to <code>Preferences -> Editor -> Color Schema -> JavaDoc HTML Cleaner</code>.
-        <p>Includes default configuration for the light and darcula theme.
+        Includes default configuration for the light and darcula theme.
         <br />
         <br />
-        Usage (tags are collapsed by default):
-        <br />
-        <br />
-        <p><img src="https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif"
-           border="0" width="750" height="550"/></p>
     ]]></description>
 
     <change-notes><![CDATA[
+        <p>1.1.1</p>
+        <ul>
+            <li>Fix typos in description</li>
+        </ul>
         <p>1.1.0</p>
         <ul>
             <li>Support of Javadoc tags, e.g {@code}</li>
@@ -59,7 +62,6 @@
         <additionalTextAttributes scheme="Darcula" file="colors/darcula.xml"/>
         <additionalTextAttributes scheme="Default" file="colors/light.xml"/>
     </extensions>
-
-
+    
     <actions/>
 </idea-plugin>

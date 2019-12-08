@@ -20,7 +20,7 @@ Usage
 -----
 Tags are collapsed by default. 
 
-![Folding Example](https://user-images.githubusercontent.com/4037842/69012627-364d9100-0978-11ea-9aec-255539d4d7f2.gif)
+![Folding Example](https://user-images.githubusercontent.com/4037842/70388764-5b9d5000-19b6-11ea-9b3f-cc53ad60e3cc.gif)
 
 Build plugin
 ------------

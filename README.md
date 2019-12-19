@@ -1,6 +1,7 @@
 Intellij Plugin ― JavaDoc HTML Cleaner
 ====================================== 
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Release](https://img.shields.io/github/release/gindex/intellij-javadoc-html-cleaner.svg)](https://github.com/gindex/intellij-javadoc-html-cleaner/releases) 
 [![JetBrains Marketplace](https://img.shields.io/jetbrains/plugin/v/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)
 [![JetBrains Marketplace Download](https://img.shields.io/jetbrains/plugin/d/13344-javadoc-html-cleaner)](https://plugins.jetbrains.com/plugin/13344-javadoc-html-cleaner)

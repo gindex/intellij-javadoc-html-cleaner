@@ -27,10 +27,12 @@ java {
 }
 
 val ideaVersion: String by project
+val ideaType: String by project
 val downloadIdeaSources: String by project
 
 intellij {
     version = ideaVersion
+    type = ideaType
     pluginName = "JavaDoc HTML Cleaner"
     setPlugins("java")
     downloadSources = downloadIdeaSources.toBoolean()

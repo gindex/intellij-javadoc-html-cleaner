@@ -26,6 +26,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+        <p>1.1.2</p>
+        <ul>
+            <li>Fix #5 folding of empty Javadoc tags</li>
+        </ul>
         <p>1.1.1</p>
         <ul>
             <li>Fix typos in description</li>

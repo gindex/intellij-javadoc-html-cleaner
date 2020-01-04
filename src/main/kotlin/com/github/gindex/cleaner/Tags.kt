@@ -63,9 +63,9 @@ open class HtmlTag(name: String): Tag() {
 
 open class JavadocTag(name: String): Tag() {
     companion object {
-        val anyTagPattern: Pattern = Pattern.compile("(\\s?\\{@\\w+)(.+?)(})", Pattern.DOTALL)
+        val anyTagPattern: Pattern = Pattern.compile("(\\s?\\{@\\w+)(.*?)(})", Pattern.DOTALL)
     }
-    override val tagStartAndEndPattern: Pattern = Pattern.compile("\\{@${name}(\\s).+?}", Pattern.DOTALL)
+    override val tagStartAndEndPattern: Pattern = Pattern.compile("\\{@${name}(\\s).*?}", Pattern.DOTALL)
 }
 
 class BoldTag(name: String) : HtmlTag(name)

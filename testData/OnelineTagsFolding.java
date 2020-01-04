@@ -17,6 +17,7 @@
  * Test for cite: <fold text=''><cite></fold>cite<fold text=''></cite></fold>
  * Test for teletype: <fold text=''><tt></fold>teletype<fold text=''></tt></fold>
  * Test for @code:<fold text=''> {@code</fold> code<fold text=''>}</fold>
+ * Test for @code:<fold text=''> {@code</fold><fold text=''>}</fold>
  * Test for @value: <fold text=''> {@value</fold> value<fold text=''>}</fold>
  * Test for @link:<fold text=''>{@link</fold> link<fold text=''>}</fold>
  * Test for @linkplain:<fold text=''>{@linkplain</fold> linkplain<fold text=''>}</fold>

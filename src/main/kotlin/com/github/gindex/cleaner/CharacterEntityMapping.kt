@@ -146,7 +146,7 @@ object CharacterEntityMapping {
             "&commat;" to "@"
     )
 
-    val entityPattern: Pattern = Pattern.compile("&.+?;")
-
     fun mapToChar(characterEntity: String): String? = mappings[characterEntity]
+
+    val anyEntityPattern: Pattern = Pattern.compile("&.+?;")
 }

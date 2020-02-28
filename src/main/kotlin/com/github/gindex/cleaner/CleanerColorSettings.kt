@@ -34,78 +34,63 @@ class CleanerColorSettings : ColorSettingsPage {
         val jValueStyleKey = createTextAttributesKey("JVALUE_FONT", HighlighterColors.TEXT)
         val jLinkplainStyleKey = createTextAttributesKey("JLINKPLAIN_FONT", HighlighterColors.TEXT)
         val jLiteralStyleKey = createTextAttributesKey("JLITERAL_FONT", HighlighterColors.TEXT)
-
-        private val ATTRS = arrayOf(
-                AttributesDescriptor("<b>", boldStyleKey),
-                AttributesDescriptor("<strong>", strongStyleKey),
-                AttributesDescriptor("<pre>", preStyleKey),
-                AttributesDescriptor("<em>", emStyleKey),
-                AttributesDescriptor("<a ..>", linkStyleKey),
-                AttributesDescriptor("<i>", italicStyleKey),
-                AttributesDescriptor("<code>", codeStyleKey),
-                AttributesDescriptor("<cite>", citeStyleKey),
-                AttributesDescriptor("<tt>", teletypeStyleKey),
-                AttributesDescriptor("<h1>", h1StyleKey),
-                AttributesDescriptor("<h2>", h2StyleKey),
-                AttributesDescriptor("<h3>", h3StyleKey),
-                AttributesDescriptor("<h4>", h4StyleKey),
-                AttributesDescriptor("<h5>", h5StyleKey),
-                AttributesDescriptor("<h6>", h6StyleKey),
-                AttributesDescriptor("{@code }", jCodeStyleKey),
-                AttributesDescriptor("{@value }", jValueStyleKey),
-                AttributesDescriptor("{@link }", jLinkStyleKey),
-                AttributesDescriptor("{@linkplain }", jLinkplainStyleKey),
-                AttributesDescriptor("{@literal }", jLiteralStyleKey)
-        )
     }
 
-    override fun getHighlighter(): SyntaxHighlighter {
-        return JavaFileHighlighter(LanguageLevel.HIGHEST)
-    }
+    override fun getHighlighter(): SyntaxHighlighter = JavaFileHighlighter(LanguageLevel.HIGHEST)
 
-    override fun getAdditionalHighlightingTagToDescriptorMap(): MutableMap<String, TextAttributesKey> {
-        return mapOf(
-                "b" to boldStyleKey,
-                "strong" to strongStyleKey,
-                "em" to emStyleKey,
-                "h1" to h1StyleKey,
-                "h2" to h2StyleKey,
-                "h3" to h3StyleKey,
-                "h4" to h4StyleKey,
-                "h5" to h5StyleKey,
-                "h6" to h6StyleKey,
-                "pre" to preStyleKey,
-                "link" to linkStyleKey,
-                "code" to codeStyleKey,
-                "i" to italicStyleKey,
-                "cite" to citeStyleKey,
-                "teletype" to teletypeStyleKey,
-                "_code" to jCodeStyleKey,
-                "_value" to jValueStyleKey,
-                "_link" to jLinkStyleKey,
-                "_linkplain" to jLinkplainStyleKey,
-                "_literal" to jLiteralStyleKey
-        ).toMutableMap()
-    }
+    override fun getAdditionalHighlightingTagToDescriptorMap(): MutableMap<String, TextAttributesKey> = mapOf(
+            "b" to boldStyleKey,
+            "strong" to strongStyleKey,
+            "em" to emStyleKey,
+            "h1" to h1StyleKey,
+            "h2" to h2StyleKey,
+            "h3" to h3StyleKey,
+            "h4" to h4StyleKey,
+            "h5" to h5StyleKey,
+            "h6" to h6StyleKey,
+            "pre" to preStyleKey,
+            "link" to linkStyleKey,
+            "code" to codeStyleKey,
+            "i" to italicStyleKey,
+            "cite" to citeStyleKey,
+            "teletype" to teletypeStyleKey,
+            "_code" to jCodeStyleKey,
+            "_value" to jValueStyleKey,
+            "_link" to jLinkStyleKey,
+            "_linkplain" to jLinkplainStyleKey,
+            "_literal" to jLiteralStyleKey
+    ).toMutableMap()
 
-    override fun getIcon(): Icon? {
-        return null
-    }
+    override fun getIcon(): Icon? = null
 
-    override fun getAttributeDescriptors(): Array<AttributesDescriptor> {
-        return ATTRS
-    }
+    override fun getAttributeDescriptors(): Array<AttributesDescriptor> = arrayOf(
+            AttributesDescriptor("<b>", boldStyleKey),
+            AttributesDescriptor("<strong>", strongStyleKey),
+            AttributesDescriptor("<pre>", preStyleKey),
+            AttributesDescriptor("<em>", emStyleKey),
+            AttributesDescriptor("<a ..>", linkStyleKey),
+            AttributesDescriptor("<i>", italicStyleKey),
+            AttributesDescriptor("<code>", codeStyleKey),
+            AttributesDescriptor("<cite>", citeStyleKey),
+            AttributesDescriptor("<tt>", teletypeStyleKey),
+            AttributesDescriptor("<h1>", h1StyleKey),
+            AttributesDescriptor("<h2>", h2StyleKey),
+            AttributesDescriptor("<h3>", h3StyleKey),
+            AttributesDescriptor("<h4>", h4StyleKey),
+            AttributesDescriptor("<h5>", h5StyleKey),
+            AttributesDescriptor("<h6>", h6StyleKey),
+            AttributesDescriptor("{@code }", jCodeStyleKey),
+            AttributesDescriptor("{@value }", jValueStyleKey),
+            AttributesDescriptor("{@link }", jLinkStyleKey),
+            AttributesDescriptor("{@linkplain }", jLinkplainStyleKey),
+            AttributesDescriptor("{@literal }", jLiteralStyleKey)
+    )
 
-    override fun getColorDescriptors(): Array<ColorDescriptor> {
-        return ColorDescriptor.EMPTY_ARRAY
-    }
+    override fun getColorDescriptors(): Array<ColorDescriptor> = ColorDescriptor.EMPTY_ARRAY
 
-    override fun getDisplayName(): String {
-        return "JavaDoc HTML Cleaner"
-    }
+    override fun getDisplayName(): String = "JavaDoc HTML Cleaner"
 
-    override fun getDemoText(): String {
-        return """
+    override fun getDemoText(): String = """
         |/**
         | * This is a test comment
         | *
@@ -131,6 +116,5 @@ class CleanerColorSettings : ColorSettingsPage {
         | * Test for @literal: <_literal>{@literal literal}</_literal>
         | */ 
         """.trimMargin()
-    }
 
 }

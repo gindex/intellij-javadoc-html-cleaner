@@ -1,7 +1,7 @@
 package com.github.gindex.cleaner
 
 import com.intellij.ide.highlighter.JavaFileHighlighter
-import com.intellij.openapi.editor.HighlighterColors
+import com.intellij.openapi.editor.HighlighterColors.TEXT
 import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey
 import com.intellij.openapi.fileTypes.SyntaxHighlighter
@@ -14,26 +14,26 @@ import javax.swing.Icon
 
 class CleanerColorSettings : ColorSettingsPage {
     companion object {
-        val boldStyleKey = createTextAttributesKey("BOLD_FONT", HighlighterColors.TEXT)
-        val strongStyleKey = createTextAttributesKey("STRONG_FONT", HighlighterColors.TEXT)
-        val emStyleKey = createTextAttributesKey("EM_FONT", HighlighterColors.TEXT)
-        val h1StyleKey = createTextAttributesKey("H1_FONT", HighlighterColors.TEXT)
-        val h2StyleKey = createTextAttributesKey("H2_FONT", HighlighterColors.TEXT)
-        val h3StyleKey = createTextAttributesKey("H3_FONT", HighlighterColors.TEXT)
-        val h4StyleKey = createTextAttributesKey("H4_FONT", HighlighterColors.TEXT)
-        val h5StyleKey = createTextAttributesKey("H5_FONT", HighlighterColors.TEXT)
-        val h6StyleKey = createTextAttributesKey("H6_FONT", HighlighterColors.TEXT)
-        val preStyleKey = createTextAttributesKey("PRE_FONT", HighlighterColors.TEXT)
-        val linkStyleKey = createTextAttributesKey("LINK_FONT", HighlighterColors.TEXT)
-        val codeStyleKey = createTextAttributesKey("CODE_FONT", HighlighterColors.TEXT)
-        val italicStyleKey = createTextAttributesKey("ITALIC_FONT", HighlighterColors.TEXT)
-        val citeStyleKey = createTextAttributesKey("CITE_FONT", HighlighterColors.TEXT)
-        val teletypeStyleKey = createTextAttributesKey("TT_FONT", HighlighterColors.TEXT)
-        val jCodeStyleKey = createTextAttributesKey("JCODE_FONT", HighlighterColors.TEXT)
-        val jLinkStyleKey = createTextAttributesKey("JLINK_FONT", HighlighterColors.TEXT)
-        val jValueStyleKey = createTextAttributesKey("JVALUE_FONT", HighlighterColors.TEXT)
-        val jLinkplainStyleKey = createTextAttributesKey("JLINKPLAIN_FONT", HighlighterColors.TEXT)
-        val jLiteralStyleKey = createTextAttributesKey("JLITERAL_FONT", HighlighterColors.TEXT)
+        val boldStyleKey = createTextAttributesKey("BOLD_FONT", TEXT)
+        val strongStyleKey = createTextAttributesKey("STRONG_FONT", TEXT)
+        val emStyleKey = createTextAttributesKey("EM_FONT", TEXT)
+        val h1StyleKey = createTextAttributesKey("H1_FONT", TEXT)
+        val h2StyleKey = createTextAttributesKey("H2_FONT", TEXT)
+        val h3StyleKey = createTextAttributesKey("H3_FONT", TEXT)
+        val h4StyleKey = createTextAttributesKey("H4_FONT", TEXT)
+        val h5StyleKey = createTextAttributesKey("H5_FONT", TEXT)
+        val h6StyleKey = createTextAttributesKey("H6_FONT", TEXT)
+        val preStyleKey = createTextAttributesKey("PRE_FONT", TEXT)
+        val linkStyleKey = createTextAttributesKey("LINK_FONT", TEXT)
+        val codeStyleKey = createTextAttributesKey("CODE_FONT", TEXT)
+        val italicStyleKey = createTextAttributesKey("ITALIC_FONT", TEXT)
+        val citeStyleKey = createTextAttributesKey("CITE_FONT", TEXT)
+        val teletypeStyleKey = createTextAttributesKey("TT_FONT", TEXT)
+        val jCodeStyleKey = createTextAttributesKey("JCODE_FONT", TEXT)
+        val jLinkStyleKey = createTextAttributesKey("JLINK_FONT", TEXT)
+        val jValueStyleKey = createTextAttributesKey("JVALUE_FONT", TEXT)
+        val jLinkplainStyleKey = createTextAttributesKey("JLINKPLAIN_FONT", TEXT)
+        val jLiteralStyleKey = createTextAttributesKey("JLITERAL_FONT", TEXT)
     }
 
     override fun getHighlighter(): SyntaxHighlighter = JavaFileHighlighter(LanguageLevel.HIGHEST)
@@ -86,7 +86,7 @@ class CleanerColorSettings : ColorSettingsPage {
             AttributesDescriptor("{@literal }", jLiteralStyleKey)
     )
 
-    override fun getColorDescriptors(): Array<ColorDescriptor> = ColorDescriptor.EMPTY_ARRAY
+    override fun getColorDescriptors(): Array<ColorDescriptor> = emptyArray()
 
     override fun getDisplayName(): String = "JavaDoc HTML Cleaner"
 
@@ -116,5 +116,4 @@ class CleanerColorSettings : ColorSettingsPage {
         | * Test for @literal: <_literal>{@literal literal}</_literal>
         | */ 
         """.trimMargin()
-
 }

@@ -24,11 +24,12 @@ class TagFoldingBuilder : FoldingBuilderEx() {
             val entityFoldingDesc: List<FoldingDescriptor> = getEntityFoldingDesc(javadoc, group)
             val javadocTagFoldingDesc: List<FoldingDescriptor> = getJavadocTagFoldingDesc(javadoc, group)
 
-            ArrayList<FoldingDescriptor>(tagFoldingDesc.size + entityFoldingDesc. size + javadocTagFoldingDesc.size).apply {
-                this.addAll(tagFoldingDesc)
-                this.addAll(entityFoldingDesc)
-                this.addAll(javadocTagFoldingDesc)
-            }
+            ArrayList<FoldingDescriptor>(tagFoldingDesc.size + entityFoldingDesc.size + javadocTagFoldingDesc.size)
+                    .apply {
+                        addAll(tagFoldingDesc)
+                        addAll(entityFoldingDesc)
+                        addAll(javadocTagFoldingDesc)
+                    }
         }.toTypedArray()
     }
 
@@ -49,10 +50,7 @@ class TagFoldingBuilder : FoldingBuilderEx() {
             HtmlTag.anyTagPattern
                     .extractMatchingRanges(javadoc.text)
                     .map { (text, start, end) ->
-                        val placeholderText = when {
-                            text.contains("<li>") -> "-"
-                            else -> ""
-                        }
+                        val placeholderText = if(text.contains("<li>")) "-" else ""
 
                         FoldingDescriptor(
                                 javadoc.node,
@@ -66,12 +64,12 @@ class TagFoldingBuilder : FoldingBuilderEx() {
             CharacterEntityMapping.anyEntityPattern
                     .extractMatchingRanges(javadoc.text)
                     .mapNotNull { (text, start, end) ->
-                        CharacterEntityMapping.mapToChar(text)?.run {
+                        CharacterEntityMapping.mapToChar(text)?.let { char ->
                             FoldingDescriptor(
                                     javadoc.node,
                                     TextRange(javadoc.textOffset + start, javadoc.textOffset + end),
                                     group,
-                                    this
+                                    char
                             )
                         }
                     }

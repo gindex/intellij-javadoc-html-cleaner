@@ -1,5 +1,6 @@
 package com.github.gindex.cleaner
 
+import com.github.gindex.cleaner.Tag.Companion.tags
 import com.intellij.lang.annotation.AnnotationHolder
 import com.intellij.lang.annotation.Annotator
 import com.intellij.lang.annotation.HighlightSeverity
@@ -16,17 +17,17 @@ class TagAnnotator : Annotator {
         val javadoc = element as? PsiDocComment ?: return
         val javadocText = javadoc.text ?: return
 
-        Tag.tags.forEach {
-            val tagStyleKey = it.mapTagToStyle() ?: return@forEach
+        tags.forEach { tag ->
+            val tagStyle = tag.style() ?: return@forEach
 
-            it.tagStartAndEndPattern.extractMatchingRanges(javadocText)
+            tag.tagStartAndEndPattern.extractMatchingRanges(javadocText)
                     .flatMap { (text, start, end) ->
                         extractRangesWithSplit(text, javadoc.textOffset + start, javadoc.textOffset + end)
                     }
                     .forEach { range ->
                         holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
                                 .range(range)
-                                .textAttributes(tagStyleKey)
+                                .textAttributes(tagStyle)
                                 .create()
                     }
         }
@@ -36,7 +37,7 @@ class TagAnnotator : Annotator {
             if (text.contains("*")) {
                 leadingAsterisksPattern.extractMatchingRanges(text)
                         .fold(Pair(startInParent, listOf<TextRange>())) { (currentStart, collector), asterisksRange ->
-                            val extendedRange = collector.plus(TextRange(currentStart, startInParent + asterisksRange.start))
+                            val extendedRange = collector + TextRange(currentStart, startInParent + asterisksRange.start)
                             Pair(startInParent + asterisksRange.end, extendedRange)
                         }.run {
                             second.plus(TextRange(first, endInParent))
@@ -44,5 +45,4 @@ class TagAnnotator : Annotator {
             } else {
                 listOf(TextRange(startInParent, endInParent))
             }
-
 }

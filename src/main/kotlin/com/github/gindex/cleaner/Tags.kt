@@ -73,7 +73,7 @@ abstract class Tag {
 
     abstract val tagStartAndEndPattern: Pattern
 
-    fun mapTagToStyle(): TextAttributesKey? = when (this) {
+    fun style(): TextAttributesKey? = when (this) {
         is BoldTag -> boldStyleKey
         is StrongTag -> strongStyleKey
         is EmTag -> emStyleKey
@@ -139,16 +139,16 @@ sealed class JavadocTag(name: String) : Tag() {
 data class TextAndRange(val text: String, val start: Int, val end: Int)
 
 fun Pattern.extractMatchingRanges(str: String, groupIds: List<Int> = listOf(0)): List<TextAndRange> {
-    tailrec fun collect(matcher: Matcher, rangeCollector: List<TextAndRange>): List<TextAndRange> =
+    tailrec fun collectAll(matcher: Matcher, rangeCollector: List<TextAndRange>): List<TextAndRange> =
             if (matcher.find()) {
-                val range = matcher.run {
-                    groupIds.map { groupId -> TextAndRange(group(groupId), start(groupId), end(groupId)) }
+                val range = groupIds.map {
+                    TextAndRange(matcher.group(it), matcher.start(it), matcher.end(it))
                 }
-                collect(matcher, rangeCollector.plus(range))
+
+                collectAll(matcher, rangeCollector + range)
             } else {
                 rangeCollector
             }
 
-    val matcher = this.matcher(str)
-    return collect(matcher, emptyList())
+    return collectAll(matcher(str), emptyList())
 }

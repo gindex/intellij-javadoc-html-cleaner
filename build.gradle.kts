@@ -15,7 +15,7 @@ plugins {
 }
 
 group = "com.github.gindex"
-version = "1.1.3"
+version = "1.1.4"
 
 repositories {
     mavenCentral()

@@ -9,7 +9,7 @@ buildscript {
 
 plugins {
     java
-    id("org.jetbrains.intellij") version "0.4.21"
+    id("org.jetbrains.intellij") version "0.7.3"
     kotlin("jvm") version "1.5.0"
     idea
 }

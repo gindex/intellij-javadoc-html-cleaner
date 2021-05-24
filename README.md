@@ -32,11 +32,11 @@ Requires:
 
 Build the plugin:
 
-`.\gradlew clean buildPlugin`
+`./gradlew clean buildPlugin`
 
 Run the plugin in Intellij:
 
-`.\gradlew runIde`
+`./gradlew runIde`
 
 Compatibility
 -------------

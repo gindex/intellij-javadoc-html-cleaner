@@ -17,32 +17,30 @@ class TagAnnotator : Annotator {
         val javadoc = element as? PsiDocComment ?: return
         val javadocText = javadoc.text ?: return
 
-        tags.forEach { tag ->
-            val tagStyle = tag.style
-
+        for (tag in tags) {
             tag.tagStartAndEndPattern.extractMatchingRanges(javadocText)
-                    .flatMap { (text, start, end) ->
-                        extractRangesWithSplit(text, javadoc.textOffset + start, javadoc.textOffset + end)
-                    }
-                    .forEach { range ->
-                        holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
-                                .range(range)
-                                .textAttributes(tagStyle)
-                                .create()
-                    }
+                .flatMap { (text, start, end) ->
+                    extractRangesWithSplit(text, javadoc.textOffset + start, javadoc.textOffset + end)
+                }
+                .forEach { range ->
+                    holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
+                        .range(range)
+                        .textAttributes(tag.style)
+                        .create()
+                }
         }
     }
 
     private fun extractRangesWithSplit(text: String, startInParent: Int, endInParent: Int): List<TextRange> =
-            if (text.contains("*")) {
-                leadingAsterisksPattern.extractMatchingRanges(text)
-                        .fold(Pair(startInParent, listOf<TextRange>())) { (currentStart, collector), asterisksRange ->
-                            val extendedRange = collector + TextRange(currentStart, startInParent + asterisksRange.start)
-                            Pair(startInParent + asterisksRange.end, extendedRange)
-                        }.run {
-                            second.plus(TextRange(first, endInParent))
-                        }
-            } else {
-                listOf(TextRange(startInParent, endInParent))
-            }
+        if (text.contains("*")) {
+            leadingAsterisksPattern.extractMatchingRanges(text)
+                .fold(Pair(startInParent, listOf<TextRange>())) { (currentStart, collector), asterisksRange ->
+                    val extendedRange = collector + TextRange(currentStart, startInParent + asterisksRange.start)
+                    Pair(startInParent + asterisksRange.end, extendedRange)
+                }.run {
+                    second.plus(TextRange(first, endInParent))
+                }
+        } else {
+            listOf(TextRange(startInParent, endInParent))
+        }
 }

@@ -16,63 +16,55 @@ class TagFoldingBuilder : FoldingBuilderEx() {
 
     override fun isCollapsedByDefault(node: ASTNode): Boolean = true
 
-    override fun buildFoldRegions(root: PsiElement, document: Document, quick: Boolean): Array<FoldingDescriptor> {
-        val javadocs: Collection<PsiDocComment> = PsiTreeUtil.findChildrenOfType(root, PsiDocComment::class.java)
+    override fun buildFoldRegions(root: PsiElement, document: Document, quick: Boolean): Array<FoldingDescriptor> =
+        PsiTreeUtil.findChildrenOfType(root, PsiDocComment::class.java)
+            .flatMap { javadoc ->
+                getHtmlTagFoldingDecs(javadoc, group) +
+                        getEntityFoldingDesc(javadoc, group) +
+                        getJavadocTagFoldingDesc(javadoc, group)
+            }.toTypedArray()
 
-        return javadocs.flatMap { javadoc ->
-            val tagFoldingDesc: List<FoldingDescriptor> = getHtmlTagFoldingDecs(javadoc, group)
-            val entityFoldingDesc: List<FoldingDescriptor> = getEntityFoldingDesc(javadoc, group)
-            val javadocTagFoldingDesc: List<FoldingDescriptor> = getJavadocTagFoldingDesc(javadoc, group)
-
-            ArrayList<FoldingDescriptor>(tagFoldingDesc.size + entityFoldingDesc.size + javadocTagFoldingDesc.size)
-                    .apply {
-                        addAll(tagFoldingDesc)
-                        addAll(entityFoldingDesc)
-                        addAll(javadocTagFoldingDesc)
-                    }
-        }.toTypedArray()
-    }
 
     private fun getJavadocTagFoldingDesc(javadoc: PsiDocComment, group: FoldingGroup): List<FoldingDescriptor> =
-            JavadocTag.anyTagPattern
-                    .extractMatchingRanges(javadoc.text, listOf(1, 3))
-                    .map { (_, start, end) ->
-                        FoldingDescriptor(
-                                javadoc.node,
-                                TextRange(javadoc.textOffset + start, javadoc.textOffset + end),
-                                group,
-                                ""
-                        )
-                    }
+        JavadocTag.anyTagPattern
+            .extractMatchingRanges(javadoc.text, listOf(1, 3))
+            .map { (_, start, end) ->
+                FoldingDescriptor(
+                    javadoc.node,
+                    TextRange(javadoc.textOffset + start, javadoc.textOffset + end),
+                    group,
+                    ""
+                )
+            }
 
 
     private fun getHtmlTagFoldingDecs(javadoc: PsiDocComment, group: FoldingGroup): List<FoldingDescriptor> =
-            HtmlTag.anyTagPattern
-                    .extractMatchingRanges(javadoc.text)
-                    .map { (text, start, end) ->
-                        val placeholderText = if(text.contains("<li>")) "-" else ""
+        HtmlTag.anyTagPattern
+            .extractMatchingRanges(javadoc.text)
+            .map { (text, start, end) ->
+                val placeholderText = if (text.contains("<li>")) "-" else ""
 
-                        FoldingDescriptor(
-                                javadoc.node,
-                                TextRange(javadoc.textOffset + start, javadoc.textOffset + end),
-                                group,
-                                placeholderText
-                        )
-                    }
+                FoldingDescriptor(
+                    javadoc.node,
+                    TextRange(javadoc.textOffset + start, javadoc.textOffset + end),
+                    group,
+                    placeholderText
+                )
+            }
 
     private fun getEntityFoldingDesc(javadoc: PsiDocComment, group: FoldingGroup): List<FoldingDescriptor> =
-            CharacterEntityMapping.anyEntityPattern
-                    .extractMatchingRanges(javadoc.text)
-                    .mapNotNull { (text, start, end) ->
-                        CharacterEntityMapping.mapToChar(text)?.let { char ->
-                            FoldingDescriptor(
-                                    javadoc.node,
-                                    TextRange(javadoc.textOffset + start, javadoc.textOffset + end),
-                                    group,
-                                    char
-                            )
-                        }
-                    }
+        CharacterEntityMapping.anyEntityPattern
+            .extractMatchingRanges(javadoc.text)
+            .mapNotNull { (text, start, end) ->
+                CharacterEntityMapping.mapToChar(text)?.let { char ->
+                    FoldingDescriptor(
+                        javadoc.node,
+                        TextRange(javadoc.textOffset + start, javadoc.textOffset + end),
+                        group,
+                        char
+                    )
+                }
+            }
 
     override fun getPlaceholderText(node: ASTNode): String? = null
 }

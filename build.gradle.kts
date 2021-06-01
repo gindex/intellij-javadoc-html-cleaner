@@ -39,10 +39,6 @@ intellij {
     sandboxDirectory = project.rootDir.canonicalPath + "/.sandbox"
 }
 
-//dependencies {
-//    compileOnly(kotlin("stdlib-jdk8"))
-//}
-
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {

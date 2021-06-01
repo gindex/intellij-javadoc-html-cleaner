@@ -18,7 +18,7 @@ class TagAnnotator : Annotator {
         val javadocText = javadoc.text ?: return
 
         tags.forEach { tag ->
-            val tagStyle = tag.style() ?: return@forEach
+            val tagStyle = tag.style
 
             tag.tagStartAndEndPattern.extractMatchingRanges(javadocText)
                     .flatMap { (text, start, end) ->
